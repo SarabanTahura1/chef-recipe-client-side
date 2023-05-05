@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AuthProvider from "./Provider/AuthProvider";
 import Login from "./Outlets/Login/Login";
 import Signup from "./Outlets/Signup/Signup";
+import Blog from "./Outlets/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "blog",
-        element: <Home></Home>,
+        element: <Blog></Blog>,
       },
       {
         path: "login",

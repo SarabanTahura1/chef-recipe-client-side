@@ -4,15 +4,19 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayouts from "./Layouts/MainLayouts.jsx";
 import Home from "./Outlets/Home/Home";
+import Errorpage from "./Shared/Errorpage/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
-    children:[{
-      path:'/',
-      element:<Home></Home>
-    }]
+    errorElement: <Errorpage></Errorpage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+    ],
   },
 ]);
 

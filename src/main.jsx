@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayouts from "./Layouts/MainLayouts.jsx";
 import Home from "./Outlets/Home/Home";
 import Errorpage from "./Shared/Errorpage/Errorpage";
+import ChefData from "./Outlets/Chef/ChefData";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "chef/:id",
+        element: <ChefData></ChefData>,
+        loader: ({ params }) =>
+          fetch(
+            `https://simply-recipes-three.vercel.app/chef-data/${params.id}`
+          ),
       },
     ],
   },

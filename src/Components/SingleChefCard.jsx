@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleChefCard = ({ chef }) => {
   const { id, picture, name, experience, num_recipes, likes } = chef;
@@ -19,7 +20,12 @@ const SingleChefCard = ({ chef }) => {
         </div>
         <span>No. of Recipe : {num_recipes}</span>
         <div className=" text-center my-4">
-          <button className="btn inline-block btn-primary">View Recipe</button>
+          <Link
+            to={`/chef/${id}`}
+            className="border-2 px-4 py-2  inline-block cursor-pointer rounded-md hover:border-green-500 text-green-600"
+          >
+            View Recipe
+          </Link>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex-1">
-          <Link to="/" className=" normal-case font-bold text-xl">
+          <Link to="/" className="min-w-max normal-case font-bold text-xl">
             Simply Recipe
           </Link>
         </div>

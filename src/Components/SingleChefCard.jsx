@@ -18,10 +18,10 @@ const SingleChefCard = ({ chef }) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <LazyLoad threshold={0.65}>
+        <LazyLoad threshold={0.95}>
           <img
             src={picture}
-            alt="Shoes"
+            alt="chef"
             className="rounded-xl object-fill h-56 w-full"
           />
         </LazyLoad>

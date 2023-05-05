@@ -6,6 +6,7 @@ import MainLayouts from "./Layouts/MainLayouts.jsx";
 import Home from "./Outlets/Home/Home";
 import Errorpage from "./Shared/Errorpage/Errorpage";
 import ChefData from "./Outlets/Chef/ChefData";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "chef/:id",
-        element: <ChefData></ChefData>,
+        element: (
+          <PrivateRoute>
+            <ChefData></ChefData>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://simply-recipes-three.vercel.app/chef-data/${params.id}`

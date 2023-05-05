@@ -4,6 +4,7 @@ import SingleChefCard from "../../../Components/SingleChefCard";
 const Chef = () => {
   const [chef, setChef] = useState([]);
 
+  // load chef data
   useEffect(() => {
     fetch("https://simply-recipes-three.vercel.app/chef-data")
       .then((res) => res.json())

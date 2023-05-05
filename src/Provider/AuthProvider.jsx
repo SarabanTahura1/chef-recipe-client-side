@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import { app } from "../../firebase.config";
 
+// context
 const AuthInfoProvider = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -23,6 +24,7 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  // google login
   const googleLogin = () => {
     setLoading(true);
     signInWithPopup(auth, googleProvider)
@@ -34,6 +36,7 @@ const AuthProvider = ({ children }) => {
       });
   };
 
+  // github login
   const githubLogin = () => {
     setLoading(true);
     signInWithPopup(auth, githubProvider)
@@ -66,6 +69,7 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  // logout function
   const userLogOut = () => {
     return signOut(auth);
   };

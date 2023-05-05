@@ -44,12 +44,11 @@ const Signup = () => {
       });
     }
 
-    console.log(email, name, url, password);
     newAccountCreate(email, password)
       .then((result) => {
         userLogOut();
         const user = result.user;
-        console.log(user);
+
         profileUpdate(user, name, url)
           .then((result) => {})
           .catch((error) => {

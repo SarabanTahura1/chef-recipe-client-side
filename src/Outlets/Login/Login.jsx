@@ -6,9 +6,13 @@ import Swal from "sweetalert2";
 const Login = () => {
   const { googleLogin, githubLogin, userLogin } = useContext(AuthInfoProvider);
   const [errortext, setErrortext] = useState("");
+
+  // hook
   const location = useLocation();
   const navigation = useNavigate();
+
   const from = location?.state?.from?.pathname || "/";
+
   // handle creeate user
   const handleUserLogin = (e) => {
     e.preventDefault();
@@ -16,9 +20,10 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     setErrortext("");
-    console.log(email, password);
+
     userLogin(email, password)
       .then((result) => {
+        // sweat alert
         Swal.fire({
           title: "success",
           text: "Login Successfully",

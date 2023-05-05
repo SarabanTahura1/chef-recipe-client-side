@@ -6,6 +6,7 @@ const SingleRecipeCard = ({ recipe }) => {
     recipe;
   return (
     <div className="card w-full h-fit bg-base-100 shadow-xl">
+      {/* recipe images */}
       <figure className="px-10 pt-10">
         <img
           src={image_link}
@@ -17,18 +18,21 @@ const SingleRecipeCard = ({ recipe }) => {
         <h2 className=" text-center text-xl font-bold px-4 border-green-500 border-2 rounded-full py-2">
           {recipe_name}
         </h2>
+        {/* ingredients */}
         <div>
           <p className="text-xl font-semibold underline py-2">Ingredients</p>
           {ingredients.map((ingredient, index) => (
             <span key={index}>{ingredient}</span>
           ))}
         </div>
+        {/* Cooking Method */}
         <div>
           <p className="text-xl font-semibold underline py-2">Cooking Method</p>
           {cooking_method.map((method, index) => (
             <span key={index}>{method}</span>
           ))}
         </div>
+        {/* ratings */}
         <div className="flex items-center gap-1">
           <span className="text-lg font-semibold py-2">Ratings : {rating}</span>
           <AiTwotoneStar className="text-yellow-600 text-xl" />{" "}

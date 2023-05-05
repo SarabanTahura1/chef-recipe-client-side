@@ -9,6 +9,7 @@ const FoodAndHealth = () => {
             Food and Health
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* food & health card 01 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
               <img
                 src="https://media.istockphoto.com/id/1140193165/photo/slim-and-fit-woman-drinking-water-before-having-breakfast.jpg?s=612x612&w=0&k=20&c=_QgpYIvS6mFI18tGVJGGD5mKbJ9KHk5JBqAfHDIopKg="
@@ -27,6 +28,7 @@ const FoodAndHealth = () => {
                 </p>
               </div>
             </div>
+            {/* food & health card 02 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
               <img
                 src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/11/exercise-1667806059.jpg"
@@ -45,6 +47,7 @@ const FoodAndHealth = () => {
                 </p>
               </div>
             </div>
+            {/* food & health card 03 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
               <img
                 src="https://img.taste.com.au/27HLC_W5/taste/2019/05/one-pot-healthy-chicken-pasta-149595-2.jpg"

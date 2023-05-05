@@ -9,6 +9,7 @@ const CookingTips = () => {
             Cooking Tips and Techniques
           </h2>
           <div className="flex flex-wrap -mx-2">
+            {/* cooking tips card 01 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
@@ -30,7 +31,8 @@ const CookingTips = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div>{" "}
+            {/* cooking tips card 02 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
@@ -48,11 +50,11 @@ const CookingTips = () => {
                     olive oil, salt, and pepper. Don't overcrowd the pan - give
                     your veggies some breathing room. Roast at a high
                     temperature and stir occasionally for perfectly caramelized.
-            
                   </p>
                 </div>
               </div>
-            </div>
+            </div>{" "}
+            {/* cooking tips card 03 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
@@ -73,7 +75,8 @@ const CookingTips = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div>{" "}
+            {/* cooking tips card 04 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
@@ -94,7 +97,8 @@ const CookingTips = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div>{" "}
+            {/* cooking tips card 05 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
@@ -116,7 +120,8 @@ const CookingTips = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div>{" "}
+            {/* cooking tips card 06 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img

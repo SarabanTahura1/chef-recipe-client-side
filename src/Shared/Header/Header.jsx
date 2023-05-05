@@ -4,7 +4,7 @@ import { AuthInfoProvider } from "../../Provider/AuthProvider";
 
 const Header = () => {
   const { user, userLogOut } = useContext(AuthInfoProvider);
-  console.log(user);
+
   return (
     <div className="bg-green-500">
       {/* navbar start */}

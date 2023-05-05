@@ -9,6 +9,7 @@ const Blog = () => {
     <div className="container mx-auto">
       <div className="my-20 px-4" ref={ref}>
         <div className="mb-10">
+          {/* Question 01 */}
           <h2 className="text-2xl font-bold">
             Tell us the differences between uncontrolled and controlled
             components.
@@ -26,6 +27,7 @@ const Blog = () => {
             state, which in turn updates the component's value.
           </p>
         </div>
+        {/* Question 02 */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold">
             Tell us the difference between nodejs and express js
@@ -41,6 +43,7 @@ const Blog = () => {
             event-driven architecture.
           </p>
         </div>
+        {/* Question 03 */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold">
             How to validate React props using PropTypes?
@@ -64,6 +67,7 @@ const Blog = () => {
             </li>
           </ul>
         </div>
+        {/* Question 04 */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold">
             What is a custom hook, and why will you create a custom hook?

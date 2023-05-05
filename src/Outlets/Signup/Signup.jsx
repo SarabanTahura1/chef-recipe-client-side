@@ -21,6 +21,20 @@ const Signup = () => {
     const name = form.name.value;
     const url = form.url.value;
     setErrortext(" ");
+
+    // if field Empty
+
+    // if (
+    //   name.length === 0 ||
+    //   email.length === 0 ||
+    //   url.length === 0 ||
+    //   password.length === 0
+    // )
+    if (name.length || email.length || url.length || password.length === 0) {
+      return setErrortext(
+        "You can not Submit ! Please Fill the blanks input field"
+      );
+    }
     // password length checker
     if (password.length < 6) {
       return Swal.fire({
@@ -100,7 +114,6 @@ const Signup = () => {
                 id="photourl"
                 name="url"
                 type="url"
-                required
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -119,7 +132,6 @@ const Signup = () => {
                 name="email"
                 type="email"
                 autoComplete="email"
-                required
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -140,7 +152,6 @@ const Signup = () => {
                 name="password"
                 type="password"
                 autoComplete="current-password"
-                required
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>

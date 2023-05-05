@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthInfoProvider } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { googleLogin, githubLogin, userLogin } = useContext(AuthInfoProvider);
   const [errortext, setErrortext] = useState("");
+  
   // handle creeate user
   const handleUserLogin = (e) => {
     e.preventDefault();

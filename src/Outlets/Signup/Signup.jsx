@@ -4,8 +4,13 @@ import { AuthInfoProvider } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Signup = () => {
-  const { googleLogin, githubLogin, newAccountCreate, profileUpdate } =
-    useContext(AuthInfoProvider);
+  const {
+    googleLogin,
+    githubLogin,
+    newAccountCreate,
+    profileUpdate,
+    userLogOut,
+  } = useContext(AuthInfoProvider);
   const [errortext, setErrortext] = useState("");
   // handle creeate user
   const handleCreateUSer = (e) => {
@@ -29,6 +34,7 @@ const Signup = () => {
     console.log(email, name, url, password);
     newAccountCreate(email, password)
       .then((result) => {
+        userLogOut();
         const user = result.user;
         console.log(user);
         profileUpdate(user, name, url)

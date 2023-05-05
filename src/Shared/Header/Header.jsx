@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthInfoProvider } from "../../Provider/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthInfoProvider);
+  const { user, userLogOut } = useContext(AuthInfoProvider);
   console.log(user);
   return (
     <div className="bg-green-500">
@@ -81,17 +81,16 @@ const Header = () => {
                     tabIndex={0}
                     className="relative inline-block group  btn-circle avatar"
                   >
-                    <img
-                      className="w-8 rounded-full"
-                      src={user && user.photoURL}
-                    />
+                    <img className="w-8 rounded-full" src={user?.photoURL} />
                     <ul
                       className="absolute right-0 px-4  z-10 w-48 py-4 text-start bg-green-800 text-white
                    rounded-lg shadow-lg hidden group-hover:block"
                     >
-                      <a className="py-2 text-xs">{user.displayName}</a>
+                      <a className="py-2 text-xs">{user?.displayName}</a>
                       <br />
-                      <a className="py-2 text-xs">Sign Out</a>
+                      <a onClick={userLogOut} className="py-2 text-xs">
+                        Sign Out
+                      </a>
                     </ul>
                   </div>
                 </label>

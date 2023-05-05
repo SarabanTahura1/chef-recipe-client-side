@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthInfoProvider } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { googleLogin, githubLogin, userLogin } = useContext(AuthInfoProvider);
   const [errortext, setErrortext] = useState("");
-  
+  const location = useLocation();
+  const navigation = useNavigate();
+  const from = location?.state?.from?.pathname || "/";
   // handle creeate user
   const handleUserLogin = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ const Login = () => {
           icon: "success",
           confirmButtonText: "Ok",
         });
+        navigation(from);
       })
       .catch((error) => {
         setErrortext(error.message);

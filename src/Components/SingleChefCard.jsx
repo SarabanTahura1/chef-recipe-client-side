@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -17,11 +18,13 @@ const SingleChefCard = ({ chef }) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img
-          src={picture}
-          alt="Shoes"
-          className="rounded-xl object-fill h-56 w-full"
-        />
+        <LazyLoad threshold={0.65}>
+          <img
+            src={picture}
+            alt="Shoes"
+            className="rounded-xl object-fill h-56 w-full"
+          />
+        </LazyLoad>
       </figure>
       <div className="card-body ">
         <h2 className="card-title">{name}</h2>

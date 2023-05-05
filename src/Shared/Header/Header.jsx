@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthInfoProvider } from "../../Provider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthInfoProvider);
+  console.log(user);
   return (
     <div className="bg-green-500">
       {/* navbar start */}
@@ -51,7 +54,9 @@ const Header = () => {
             <li>
               <NavLink
                 to="/"
-                className={({ isActive }) => (isActive ? "underline text-white" : "")}
+                className={({ isActive }) =>
+                  isActive ? "underline text-white" : ""
+                }
               >
                 Home
               </NavLink>
@@ -59,16 +64,56 @@ const Header = () => {
             <li>
               <NavLink
                 to="/blog"
-                className={({ isActive }) => (isActive ? "underline text-white" : "")}
+                className={({ isActive }) =>
+                  isActive ? "underline text-white" : ""
+                }
               >
                 Blog
               </NavLink>
             </li>
-            <Link to="/login">
+            {user ? (
+              <div>
+                <label
+                  className="btn btn-ghost btn-circle relative
+               "
+                >
+                  <div
+                    tabIndex={0}
+                    className="relative inline-block group  btn-circle avatar"
+                  >
+                    <img
+                      className="w-8 rounded-full"
+                      src={user && user.photoURL}
+                      
+                    />
+                    <ul
+                      className="absolute right-0 px-4  z-10 w-48 py-4 text-start bg-gray-800 text-white
+                   rounded-lg shadow-lg hidden group-hover:block"
+                    >
+                      <li className="py-2">
+                        <a className="justify-between">{user.displayName}</a>
+                      </li>
+
+                      <li className="py-2">
+                        <a>Sign Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </label>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="btn bg-gradient-to-r from-indigo-700 to-purple-700"
+              >
+                Login
+              </Link>
+            )}
+            {/* <Link to="/login">
               <button className="btn bg-purple-700 text-white border-0">
                 Login
               </button>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>

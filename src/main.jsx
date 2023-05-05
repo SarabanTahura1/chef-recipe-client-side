@@ -7,6 +7,7 @@ import Home from "./Outlets/Home/Home";
 import Errorpage from "./Shared/Errorpage/Errorpage";
 import ChefData from "./Outlets/Chef/ChefData";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AuthProvider from "./Provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -35,5 +36,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}></RouterProvider>
+  <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+  </AuthProvider>
 );

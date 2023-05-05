@@ -84,19 +84,14 @@ const Header = () => {
                     <img
                       className="w-8 rounded-full"
                       src={user && user.photoURL}
-                      
                     />
                     <ul
-                      className="absolute right-0 px-4  z-10 w-48 py-4 text-start bg-gray-800 text-white
+                      className="absolute right-0 px-4  z-10 w-48 py-4 text-start bg-green-800 text-white
                    rounded-lg shadow-lg hidden group-hover:block"
                     >
-                      <li className="py-2">
-                        <a className="justify-between">{user.displayName}</a>
-                      </li>
-
-                      <li className="py-2">
-                        <a>Sign Out</a>
-                      </li>
+                      <a className="py-2 text-xs">{user.displayName}</a>
+                      <br />
+                      <a className="py-2 text-xs">Sign Out</a>
                     </ul>
                   </div>
                 </label>
@@ -109,11 +104,6 @@ const Header = () => {
                 Login
               </Link>
             )}
-            {/* <Link to="/login">
-              <button className="btn bg-purple-700 text-white border-0">
-                Login
-              </button>
-            </Link> */}
           </ul>
         </div>
       </div>

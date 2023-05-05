@@ -8,6 +8,8 @@ import Errorpage from "./Shared/Errorpage/Errorpage";
 import ChefData from "./Outlets/Chef/ChefData";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AuthProvider from "./Provider/AuthProvider";
+import Login from "./Outlets/Login/Login";
+import Signup from "./Outlets/Signup/Signup";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "blog",
+        element: <Home></Home>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <Signup></Signup>,
       },
       {
         path: "chef/:id",

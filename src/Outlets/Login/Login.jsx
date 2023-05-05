@@ -1,28 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthInfoProvider } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const { googleLogin, githubLogin, userLogin } = useContext(AuthInfoProvider);
-
+  const [errortext, setErrortext] = useState("");
   // handle creeate user
   const handleUserLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
+    setErrortext("");
     console.log(email, password);
     userLogin(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-        alert("Login successfully");
+        Swal.fire({
+          title: "success",
+          text: "Login Successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
       })
       .catch((error) => {
-        console.log(error.code);
-        console.log(error.message);
+        setErrortext(error.message);
       });
+    form.reset();
   };
 
   return (
@@ -104,7 +107,7 @@ const Login = () => {
                   />
                 </div>
               </div>
-
+              <span className="text-error">{errortext}</span>
               {/* Register button */}
               <div className="my-6">
                 <button

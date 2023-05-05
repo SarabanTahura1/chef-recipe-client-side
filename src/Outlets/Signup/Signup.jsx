@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthInfoProvider } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const { googleLogin, githubLogin, newAccountCreate } =
     useContext(AuthInfoProvider);
-
+  const [errortext, setErrortext] = useState("");
   // handle creeate user
   const handleCreateUSer = (e) => {
     e.preventDefault();
@@ -14,17 +15,34 @@ const Signup = () => {
     const password = form.password.value;
     const name = form.name.value;
     const url = form.url.value;
+    setErrortext(" ");
+    // password length checker
+    if (password.length < 6) {
+      return Swal.fire({
+        title: "Error!",
+        text: "Password must be 6 character long",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    }
+
     console.log(email, name, url, password);
     newAccountCreate(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        alert("account create successfully");
+        setErrortext("");
+        Swal.fire({
+          title: "success",
+          text: "Account Create Successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
       })
       .catch((error) => {
-        console.log(error.code);
-        console.log(error.message);
+        setErrortext(error.code);
+        setErrortext(error.message);
       });
+    form.reset();
   };
 
   return (
@@ -115,6 +133,7 @@ const Signup = () => {
               />
             </div>
           </div>
+          <span className="text-error">{errortext}</span>
           {/* Register button */}
           <div>
             <button

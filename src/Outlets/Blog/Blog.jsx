@@ -7,7 +7,7 @@ const Blog = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="my-20" ref={ref}>
+      <div className="my-20 px-4" ref={ref}>
         <div className="mb-10">
           <h2 className="text-2xl font-bold">
             Tell us the differences between uncontrolled and controlled

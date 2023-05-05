@@ -43,6 +43,29 @@ const Blog = () => {
         </div>
         <div className="mb-10">
           <h2 className="text-2xl font-bold">
+            How to validate React props using PropTypes?
+          </h2>
+          <ul>
+            <li>
+              {" "}
+              Import the PropTypes library at the top of your component file.
+            </li>
+            <li>import PropTypes from 'prop-types'</li>
+            <li>
+              Create a propTypes object that defines the types of your props:
+            </li>
+            <li>Attach the propTypes object to your component:</li>
+            <li>
+              When a prop is passed to the component that does not match the
+              specified type, a warning will be displayed in the console. That's
+              it! By using PropTypes to validate your props, you can ensure that
+              your components receive the correct data types and help catch
+              potential errors early in the development process.
+            </li>
+          </ul>
+        </div>
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold">
             What is a custom hook, and why will you create a custom hook?
           </h2>
           <p>

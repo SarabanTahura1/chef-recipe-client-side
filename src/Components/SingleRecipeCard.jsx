@@ -19,14 +19,14 @@ const SingleRecipeCard = ({ recipe }) => {
         </h2>
         <div>
           <p className="text-xl font-semibold underline py-2">Ingredients</p>
-          {ingredients.map((ingredient) => (
-            <span key={ingredient.id}>{ingredient}</span>
+          {ingredients.map((ingredient, index) => (
+            <span key={index}>{ingredient}</span>
           ))}
         </div>
         <div>
           <p className="text-xl font-semibold underline py-2">Cooking Method</p>
-          {cooking_method.map((method) => (
-            <span key={method.id}>{method}</span>
+          {cooking_method.map((method, index) => (
+            <span key={index}>{method}</span>
           ))}
         </div>
         <div className="flex items-center gap-1">

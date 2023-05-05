@@ -4,6 +4,8 @@ import {
   GoogleAuthProvider,
   getAuth,
   signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { app } from "../../firebase.config";
 
@@ -36,9 +38,22 @@ const AuthProvider = ({ children }) => {
       });
   };
 
+  // New account create
+  const newAccountCreate = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // New account create
+  const userLogin = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
   const authInfo = {
     user,
-    googleLogin,githubLogin
+    googleLogin,
+    githubLogin,
+    newAccountCreate,
+    userLogin,
   };
 
   return (

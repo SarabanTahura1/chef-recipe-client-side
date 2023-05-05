@@ -24,13 +24,12 @@ const Signup = () => {
 
     // if field Empty
 
-    // if (
-    //   name.length === 0 ||
-    //   email.length === 0 ||
-    //   url.length === 0 ||
-    //   password.length === 0
-    // )
-    if (name.length || email.length || url.length || password.length === 0) {
+    if (
+      name.length === 0 ||
+      email.length === 0 ||
+      url.length === 0 ||
+      password.length === 0
+    ) {
       return setErrortext(
         "You can not Submit ! Please Fill the blanks input field"
       );

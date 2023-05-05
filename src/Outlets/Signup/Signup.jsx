@@ -4,7 +4,7 @@ import { AuthInfoProvider } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Signup = () => {
-  const { googleLogin, githubLogin, newAccountCreate } =
+  const { googleLogin, githubLogin, newAccountCreate, profileUpdate } =
     useContext(AuthInfoProvider);
   const [errortext, setErrortext] = useState("");
   // handle creeate user
@@ -30,7 +30,13 @@ const Signup = () => {
     newAccountCreate(email, password)
       .then((result) => {
         const user = result.user;
-        setErrortext("");
+        console.log(user);
+        profileUpdate(user, name, url)
+          .then((result) => {})
+          .catch((error) => {
+            setErrortext(error.message);
+          });
+
         Swal.fire({
           title: "success",
           text: "Account Create Successfully",

@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "../../firebase.config";
 
@@ -48,8 +49,17 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  //update profile
+  const profileUpdate = (user, name, url) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: url,
+    });
+  };
+
   const authInfo = {
     user,
+    profileUpdate,
     googleLogin,
     githubLogin,
     newAccountCreate,

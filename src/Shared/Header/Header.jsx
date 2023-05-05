@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="bg-green-400">
+    <div className="bg-green-500">
       {/* navbar start */}
       <div className="navbar  container mx-auto">
         <div className="dropdown">
@@ -47,12 +47,22 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex-none navbar-end ">
-          <ul className="menu menu-horizontal px-1 hidden lg:flex">
+          <ul className="menu   menu-horizontal px-1 hidden lg:flex font-semibold">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "underline text-white" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) => (isActive ? "underline text-white" : "")}
+              >
+                Blog
+              </NavLink>
             </li>
             <Link to="/login">
               <button className="btn bg-purple-700 text-white border-0">
